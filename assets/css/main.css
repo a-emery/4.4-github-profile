@@ -1,4 +1,153 @@
+html {
+  box-sizing: border-box; }
+
+*, *::after, *::before {
+  box-sizing: inherit; }
+
 body {
-  background: green; }
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica; }
+
+li, ul {
+  margin: 0;
+  padding: 0;
+  border: 0; }
+
+header {
+  height: 50px;
+  background: whitesmoke;
+  width: 100%;
+  border-bottom: 1px solid #e5e5e5; }
+
+.header-content {
+  width: 1005px;
+  margin: 0 auto;
+  padding: 10px; }
+  .header-content::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.logo-box {
+  background: whitesmoke;
+  background-image: url(../img/logo.png);
+  height: 28px;
+  width: 28px;
+  float: left;
+  border-radius: 100%; }
+  .logo-box:hover {
+    background-image: url(../img/logo-hover.png); }
+
+.searchbar {
+  width: 360px;
+  padding: 5px 8px 6px 8px;
+  margin: 0 10px;
+  float: left;
+  font-size: .75rem;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  letter-spacing: -.4px; }
+
+.github-header-links {
+  float: left;
+  display: inline-block; }
+
+.github-header-list-item {
+  display: inline-block;
+  padding: 5px 8px 4px 8px;
+  letter-spacing: -.2px; }
+
+.github-header-link {
+  font-size: .8rem;
+  font-weight: bold;
+  color: #333333;
+  text-decoration: none; }
+  .github-header-link:hover {
+    color: #4b7cbc; }
+
+.user-header-links {
+  float: right; }
+
+.user-header-list-item {
+  display: inline-block;
+  margin: 0 5px;
+  position: relative; }
+  .user-header-list-item:hover .header-popup-triangle {
+    display: block; }
+  .user-header-list-item:hover .header-hover-description {
+    display: block; }
+
+.user-header-link {
+  text-decoration: none;
+  color: #333333; }
+  .user-header-link:hover {
+    color: #4b7cbc; }
+  .user-header-link:hover .header-triangle {
+    height: 0;
+    width: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #4b7cbc; }
+
+.header-triangle {
+  height: 0;
+  width: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #333333;
+  display: inline-block;
+  margin: 3px; }
+
+.header-avatar {
+  height: 20px;
+  width: 20px;
+  border-radius: 3px;
+  position: relative;
+  top: 50%;
+  transform: translateY(20%); }
+
+.header-popup-triangle {
+  height: 0;
+  width: 0;
+  border-bottom: 6px solid #333333;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  position: absolute;
+  display: none; }
+
+.header-popup-triangle-one {
+  bottom: -9px;
+  left: 2px; }
+
+.header-popup-triangle-two {
+  bottom: -9px;
+  left: 2px; }
+
+.header-popup-triangle-three {
+  bottom: -8px;
+  left: 3px; }
+
+.header-hover-description {
+  position: absolute;
+  white-space: nowrap;
+  background: #333333;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-size: .7rem;
+  display: none; }
+
+.header-hover-description-one {
+  top: 27px;
+  left: -80px; }
+
+.header-hover-description-two {
+  top: 27px;
+  left: -33px; }
+
+.header-hover-description-three {
+  top: 32px;
+  left: -50px; }
 
 /*# sourceMappingURL=main.css.map */

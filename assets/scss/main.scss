@@ -1,3 +1,174 @@
+@import '../../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../../bower_components/neat/app/assets/stylesheets/neat';
+
+$header-color: rgba(245, 245, 245, 1);
+$searchbar-border: rgba(204, 204, 204, 1);
+$header-link-color: rgba(51, 51, 51, 1);
+$header-link-hover-color: rgba(75, 124, 188, 1);
+
 body {
-  background: green;
+  margin: 0;
+  padding: 0;
+  font-family: Helvetica;
+}
+
+li, ul {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+header {
+  height: 50px;
+  background: $header-color;
+  width: 100%;
+  border-bottom: 1px solid rgba(229, 229, 229, 1);
+}
+
+.header-content {
+  width: 1005px;
+  margin: 0 auto;
+  padding: 10px;
+  @include clearfix;
+}
+
+.logo-box {
+  background: $header-color;
+  background-image: url(../img/logo.png);
+  height: 28px;
+  width: 28px;
+  float: left;
+  border-radius: 100%;
+
+
+  &:hover {
+    background-image: url(../img/logo-hover.png);
+  }
+}
+
+.searchbar {
+  width: 360px;
+  padding: 5px 8px 6px 8px;
+  margin: 0 10px;
+  float: left;
+  font-size: .75rem;
+  border-radius: 5px;
+  border: 1px solid $searchbar-border;
+  letter-spacing: -.4px;
+}
+
+.github-header-links {
+  float: left;
+  display: inline-block;
+}
+
+.github-header-list-item {
+  display: inline-block;
+  padding: 5px 8px 4px 8px;
+  letter-spacing: -.2px;
+}
+
+.github-header-link {
+  font-size: .8rem;
+  font-weight: bold;
+  color: $header-link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $header-link-hover-color;
+  }
+}
+
+.user-header-links {
+  float: right;
+}
+
+.user-header-list-item {
+  display: inline-block;
+  margin: 0 5px;
+  position: relative;
+
+  &:hover .header-popup-triangle {
+    display: block;
+  }
+
+  &:hover .header-hover-description {
+    display: block;
+  }
+}
+
+.user-header-link {
+  text-decoration: none;
+  color: $header-link-color;
+
+  &:hover {
+    color: $header-link-hover-color;
+  }
+
+  &:hover .header-triangle {
+    @include triangle(8px, $header-link-hover-color, down);
+  }
+
+}
+
+.header-triangle {
+  @include triangle(8px, $header-link-color, down);
+  display: inline-block;
+  margin: 3px;
+}
+
+.header-avatar {
+  height: 20px;
+  width: 20px;
+  border-radius: 3px;
+  position: relative;
+  top: 50%;
+  transform: translateY(20%);
+}
+
+.header-popup-triangle {
+    @include triangle(12px, $header-link-color, up);
+    position: absolute;
+    display: none;
+}
+
+.header-popup-triangle-one {
+  bottom: -9px;
+  left: 2px;
+}
+
+.header-popup-triangle-two {
+  bottom: -9px;
+  left: 2px;
+}
+
+.header-popup-triangle-three {
+  bottom: -8px;
+  left: 3px;
+}
+
+.header-hover-description {
+  position: absolute;
+  white-space: nowrap;
+  background: $header-link-color;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-size: .7rem;
+  display: none;
+}
+
+.header-hover-description-one {
+  top: 27px;
+  left: -80px;
+}
+
+.header-hover-description-two {
+  top: 27px;
+  left: -33px;
+}
+
+.header-hover-description-three {
+  top: 32px;
+  left: -50px;
 }
