@@ -14,11 +14,26 @@ li, ul {
   padding: 0;
   border: 0; }
 
+.body-content {
+  max-width: 68em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1005px;
+  margin: 0 auto; }
+  .body-content::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+/**************************
+HEADER STYLING
+**************************/
 header {
   height: 50px;
   background: whitesmoke;
   width: 100%;
-  border-bottom: 1px solid #e5e5e5; }
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 20px; }
 
 .header-content {
   width: 1005px;
@@ -140,14 +155,131 @@ header {
 
 .header-hover-description-one {
   top: 27px;
-  left: -80px; }
+  transform: translateX(-50%);
+  left: 2px; }
 
 .header-hover-description-two {
   top: 27px;
-  left: -33px; }
+  transform: translateX(-50%);
+  left: 2px; }
 
 .header-hover-description-three {
   top: 32px;
-  left: -50px; }
+  transform: translateX(-50%);
+  left: 3px; }
+
+/****************************
+SIDEBAR STYLING
+****************************/
+.sidebar {
+  float: left;
+  display: block;
+  margin-right: 1.14595%;
+  width: 24.14053%;
+  height: 500px;
+  padding-left: 12px; }
+  .sidebar:last-child {
+    margin-right: 0; }
+  .sidebar::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.sidebar-avatar {
+  width: 230px;
+  height: 230px;
+  border-radius: 5px; }
+
+.user-full-name {
+  font-size: 1.6rem;
+  margin: 0px;
+  color: #333333;
+  clear: both; }
+
+.sidebar-username {
+  margin: 0 0 16px 0;
+  font-weight: lighter;
+  font-size: 1.25rem;
+  color: #666666; }
+
+.sidebar-user-information-list {
+  padding: 15px 0;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  list-style: none;
+  color: #333333; }
+
+.sidebar-user-information-list-item {
+  font-size: .865rem;
+  padding: 3px 0 3px 24px; }
+
+.sidebar-icon {
+  float: left;
+  margin-left: -24px;
+  color: #999999; }
+
+.sidebar-email {
+  text-decoration: none;
+  color: #4b7cbc; }
+  .sidebar-email:hover {
+    text-decoration: underline; }
+
+.sidebar-user-interactions {
+  text-align: center;
+  list-style: none;
+  border-bottom: 1px solid #eeeeee;
+  padding: 15px 0;
+  margin-bottom: 10px; }
+  .sidebar-user-interactions::after {
+    clear: both;
+    content: "";
+    display: table; }
+
+.sidebar-user-interaction {
+  float: left;
+  display: block;
+  margin-right: 4.74701%;
+  width: 30.16866%;
+  display: inline-block; }
+  .sidebar-user-interaction:last-child {
+    margin-right: 0; }
+  .sidebar-user-interaction:nth-child(3n) {
+    margin-right: 0; }
+  .sidebar-user-interaction:nth-child(3n+1) {
+    clear: left; }
+  .sidebar-user-interaction:hover .sidebar-user-interaction-label {
+    color: #4b7cbc; }
+
+.sidebar-user-interaction-number {
+  color: #4b7cbc;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: inline-block; }
+
+.sidebar-user-interaction-label {
+  color: #999999;
+  font-size: .6rem; }
+
+.sidebar-organizations {
+  color: #333333; }
+
+/****************************
+MAIN CONTENT STYLING
+****************************/
+.main-content {
+  float: left;
+  display: block;
+  margin-right: 1.14595%;
+  width: 74.71351%;
+  margin-right: 0;
+  height: 500px; }
+  .main-content:last-child {
+    margin-right: 0; }
+
+.repo-list-name {
+  display: inline-block; }
+
+.repo-stats {
+  float: right; }
 
 /*# sourceMappingURL=main.css.map */

@@ -38,7 +38,7 @@
         </li>
 
         <li class="user-header-list-item"><a href="" class="user-header-link">
-          <img src="assets/img/static-avatar.png" alt="" class="header-avatar"><span class="header-triangle"></span></a>
+          <img src="#" alt="" class="header-avatar js_avatar_img"><span class="header-triangle"></span></a>
           <div class="header-popup-triangle header-popup-triangle-three"></div>
           <div class="header-hover-description header-hover-description-three">
             View profile and more
@@ -48,9 +48,56 @@
     </div>
   </div>
 </header>
+<div class="body-content">
+  <div class="sidebar">
+    <img src="#" alt="" class="sidebar-avatar js_avatar_img">
+    <h1 class="user-full-name js_user_full_name"></h1>
+    <h4 class="sidebar-username js_username"></h4>
+
+    <div class="sidebar-user-information">
+      <ul class="sidebar-user-information-list">
+        <li class="sidebar-user-information-list-item"><span class="sidebar-icon"><i class="fa fa-envelope-o"></i></span><a href="mailto:aemery14@gmail.com" class="sidebar-email js_sidebar_email"></a></li>
+        <li class="sidebar-user-information-list-item"><span class="sidebar-icon"><i class="fa fa-clock-o"></i></span>Joined on <span class="js_joined_date"></span></li>
+      </ul>
+      <ul class="sidebar-user-interactions">
+        <li class="sidebar-user-interaction">
+          <div class="sidebar-user-interaction-number js_followers_number"></div>
+          <div class="sidebar-user-interaction-label">Followers</div>
+        </li>
+        <li class="sidebar-user-interaction">
+          <div class="sidebar-user-interaction-number js_starred_number"></div>
+          <div class="sidebar-user-interaction-label">Starred</div>
+        </li>
+        <li class="sidebar-user-interaction">
+          <div class="sidebar-user-interaction-number js_following_number"></div>
+          <div class="sidebar-user-interaction-label">Following</div>
+        </li>
+      </ul>
+
+      <h4 class="sidebar-organizations">Organizations</h4>
+
+    </div>
+  </div>
+
+  <div class="main-content">
+    <ul class="repo-list">
+
+    </ul>
+  </div>
+</div>
 
 
+<script id="repo-template" type="text/x-handlebars-template">
+  <li class="repo-list-item">
+    <h3 class="repo-list-name">
+      <a href="" class="repo-list-name-link">{{name}}</a>
+    </h3>
+    <div class="repo-stats">{{language}}</div>
+  </li>
+</script>
 
+<script src="bower_components/handlebars/handlebars.js"></script>
+<script src="bower_components/moment/moment.js"></script>
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="assets/scripts/main.js"></script>
 </body>
