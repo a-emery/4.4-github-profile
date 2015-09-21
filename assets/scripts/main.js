@@ -1,6 +1,6 @@
 var repos = {
               method: "GET",
-              url: "https://api.github.com/users/a-emery/repos"
+              url: "https://api.github.com/users/a-emery/repos?sort=updated"
             };
 
 var user = {
@@ -98,5 +98,5 @@ function displayRepo(data) {
   console.log(moment(data.updated_at).startOf('hour').fromNow());
 
   var repoUl = document.querySelector('.repo-list');
-  $(repoUl).prepend(outputHTML);
+  $(repoUl).append(outputHTML);
 }
