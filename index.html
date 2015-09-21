@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>GitHub</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/main.css" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,700" rel="stylesheet" type="text/css">
@@ -75,24 +75,119 @@
       </ul>
 
       <h4 class="sidebar-organizations">Organizations</h4>
+      <ul class="organizations-list">
 
+      </ul>
     </div>
   </div>
 
   <div class="main-content">
-    <ul class="repo-list">
+    <div class="main-content-heading">
+      <nav class="main-content-heading-top">
+        <div class="nav-contributions nav-link">
+          <i class="fa fa-plus-square-o"></i>
+          Contributions
+        </div>
+        <div class="nav-repositories nav-link nav-link-active">
+          <i class="fa fa-book"></i>
+          Repositories
+        </div>
+        <div class="nav-public-activities nav-link">
+          <i class="fa fa-rss"></i>
+          Public Activity
+        </div>
+        <div class="edit-profile">
+          <i class="fa fa-pencil"></i>
+          Edit profile
+        </div>
+      </nav>
 
-    </ul>
+      <div class="bottom-repo-header">
+        <form action="" class="repo-form">
+          <input type="text" class="repo-search" placeholder="Find a repository...">
+        </form>
+        <a href=""><div class="search-button">
+          Search
+        </div></a>
+
+        <a href=""><div class="new-repo-button">
+          <i class="fa fa-book"></i>
+          New
+        </div></a>
+
+        <ul class="repo-header-list">
+          <li class="repo-header-list-item"><a href="" class="repo-header-list-item-link repo-link-active">All</a></li>
+          <li class="repo-header-list-item"><a href="" class="repo-header-list-item-link">Public</a></li>
+          <li class="repo-header-list-item"><a href="" class="repo-header-list-item-link">Private</a></li>
+          <li class="repo-header-list-item"><a href="" class="repo-header-list-item-link">Sources</a></li>
+          <li class="repo-header-list-item"><a href="" class="repo-header-list-item-link">Forks</a></li>
+          <li class="repo-header-list-item"><a href="" class="repo-header-list-item-link">Mirrors</a></li>
+        </ul>
+
+      </div>
+
+    </div>
+    <div class="repo-list-container">
+      <ul class="repo-list">
+
+      </ul>
+    </div>
   </div>
 </div>
 
+<footer>
+  <div class="left-footer">
+    <ul class="left-footer-list">
+      <li class="left-footer-list-item footer-list-item github-copyright">&copy; 2015 GitHub, Inc.</li>
+      <li class="left-footer-list-item footer-list-item"><a href="" class="footer-link">Terms</a></li>
+      <li class="left-footer-list-item footer-list-item"><a href="" class="footer-link">Privacy</a></li>
+      <li class="left-footer-list-item footer-list-item"><a href="" class="footer-link">Security</a></li>
+      <li class="left-footer-list-item footer-list-item"><a href="" class="footer-link">Contact</a></li>
+      <li class="left-footer-list-item footer-list-item"><a href="" class="footer-link">Help</a></li>
+    </ul>
+  </div>
+  <div class="footer-logo"></div>
+  <div class="right-footer">
+    <ul class="right-footer-list">
+      <li class="right-footer-list-item footer-list-item"><a href="" class="footer-link">Status</a></li>
+      <li class="right-footer-list-item footer-list-item"><a href="" class="footer-link">API</a></li>
+      <li class="right-footer-list-item footer-list-item"><a href="" class="footer-link">Training</a></li>
+      <li class="right-footer-list-item footer-list-item"><a href="" class="footer-link">Shop</a></li>
+      <li class="right-footer-list-item footer-list-item"><a href="" class="footer-link">Blog</a></li>
+      <li class="right-footer-list-item footer-list-item"><a href="" class="footer-link">About</a></li>
+      <li class="right-footer-list-item footer-list-item"><a href="" class="footer-link">Pricing</a></li>
+    </ul>
+  </div>
+</footer>
+
+
+<script id="organizations-template" type="text/x-handlebars-template">
+  <li class="organizations-list-item">
+    <a href="{{url}}"><img src="{{avatar_url}}" alt="" class="organizations-img"></a>
+  </li>
+</script>
 
 <script id="repo-template" type="text/x-handlebars-template">
   <li class="repo-list-item">
     <h3 class="repo-list-name">
       <a href="" class="repo-list-name-link">{{name}}</a>
     </h3>
-    <div class="repo-stats">{{language}}</div>
+    <div class="repo-stats">{{language}}
+      <span class="stargazers">
+        <span class="stats-icon"><i class="fa fa-star"></i></span>
+        <span class="stats-count">{{stargazers_count}}</span>
+        <div class="stargazers-description">Stargazers</div>
+        <div class="stargazers-triangle"></div>
+      </span>
+
+      <span class="forks">
+        <span class="stats-icon"><i class="fa fa-code-fork"></i></span>
+        <span class="stats-count">{{forks_count}}</span>
+        <div class="forks-description">Forks</div>
+        <div class="forks-triangle"></div>
+      </span>
+    </div>
+    <div class="repo-update">Updated {{updatedAt updated_at}}</div>
   </li>
 </script>
 

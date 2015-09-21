@@ -16,7 +16,11 @@ var starred = {
               headers: { "Authorization": "token b4102a66069d10680913154dd6d6f42e7c14d363" }
             };
 
-
+var organs = {
+              method: "GET",
+              url: "https://api.github.com/user/orgs",
+              headers: { "Authorization": "token b4102a66069d10680913154dd6d6f42e7c14d363" }
+            };
 
 /*****************
 Repo Pulls
@@ -44,7 +48,7 @@ $.ajax(user).then(function(datShit){
 
 
 /*****************
-User Pulls
+Starred Pulls
 *****************/
 
 $.ajax(starred).then(function(datShit){
@@ -54,8 +58,35 @@ $.ajax(starred).then(function(datShit){
 
 
 /*****************
+Organization Pulls
+*****************/
+
+
+
+
+
+/*****************
 Handlebars
 *****************/
+
+Handlebars.registerHelper('updatedAt', function(data) {
+  return moment(data).startOf('hour').fromNow();
+});
+
+$.ajax(organs).then(function(datShit){
+  datShit.forEach(displayOrganizationImg);
+});
+
+function displayOrganizationImg(data){
+  var source = document.querySelector('#organizations-template').innerHTML;
+
+  var template = Handlebars.compile(source);
+  var outputHTML = $(template(data));
+
+  var organizationsList = $('.organizations-list');
+  $(organizationsList).append(outputHTML);
+}
+
 
 $.ajax(repos).then(function(datShit){
   datShit.forEach(displayRepo);
@@ -68,6 +99,8 @@ function displayRepo(data) {
   var template = Handlebars.compile(source);
   var outputHTML = template(data);
 
+  console.log(moment(data.updated_at).startOf('hour').fromNow());
+
   var repoUl = document.querySelector('.repo-list');
-  $(repoUl).append(outputHTML);
+  $(repoUl).prepend(outputHTML);
 }

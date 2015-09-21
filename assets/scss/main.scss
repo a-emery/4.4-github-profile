@@ -6,11 +6,14 @@ $header-color: rgba(245, 245, 245, 1);
 $searchbar-border: rgba(204, 204, 204, 1);
 $header-link-color: rgba(51, 51, 51, 1);
 $header-link-hover-color: rgba(75, 124, 188, 1);
+$header-border: rgba(221, 221, 221, 1);
 $github-blue: rgba(75, 124, 188, 1);
+$edit-profile-border: rgba(213, 213, 213, 1);
 
 $body-subheading-color: rgba(102, 102, 102, 1);
 $list-item-border-color: rgba(238, 238, 238, 1);
 $sidebar-icon-color: rgba(153, 153, 153, 1);
+$repo-subtext: rgba(138, 138, 138, 1);
 
 body {
   margin: 0;
@@ -28,6 +31,8 @@ li, ul {
   @include outer-container;
   width: 1005px;
   margin: 0 auto;
+  border-bottom: 1px solid $list-item-border-color;
+  padding-bottom: 40px;
 }
 
 /**************************
@@ -288,6 +293,22 @@ SIDEBAR STYLING
   color: $header-link-color;
 }
 
+.organizations-list {
+  @include clearfix;
+  list-style: none;
+}
+
+.organizations-list-item {
+  display: inline-block;
+  width: 42px;
+  margin: 0 5px 5px 0;
+}
+
+.organizations-img {
+  width: 100%;
+  border-radius: 3px;
+}
+
 /****************************
 MAIN CONTENT STYLING
 ****************************/
@@ -295,13 +316,293 @@ MAIN CONTENT STYLING
 .main-content {
   @include span-columns(9);
   @include omega;
-  height: 500px;
+  padding: 0 12px 0 10px;
+}
+
+.main-content-heading-top {
+  border-bottom: 1px solid $header-border;
+}
+
+.nav-link {
+  padding: 8px 12px;
+  border: 1px solid transparent;
+  font-size: .875rem;
+  display: inline-block;
+  position: relative;
+  top: 1px;
+  color: $body-subheading-color;
+}
+
+.nav-link-active {
+  border: 1px solid $header-border;
+  border-bottom: 1px solid white;
+  border-radius: 3px 3px 0 0;
+}
+
+.edit-profile {
+  float: right;
+  font-size: .8rem;
+  font-weight: bold;
+  color: $header-link-color;
+  border: 1px solid $edit-profile-border;
+  border-radius: 3px;
+  background-image: linear-gradient(rgba(251, 251, 251, 1), rgba(238, 238, 238, 1));
+  padding: 4px 13px;
+}
+
+.bottom-repo-header {
+  padding: 15px 0;
+  border-bottom: 1px solid $header-border;
+  @include clearfix;
+}
+
+.repo-form {
+  display: inline-block;
+  float: left;
+}
+
+.repo-search {
+  font-size: .8125rem;
+  padding: 7px 8px;
+  width: 260px;
+  border: 1px solid $searchbar-border;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.search-button {
+  padding: 7px 12px 8px 12px;
+  float: left;
+  display: inline-block;
+  font-size: .8125rem;
+  font-weight: bold;
+  background-image: linear-gradient(rgba(251, 251, 251, 1), rgba(238, 238, 238, 1));
+  border: 1px solid $edit-profile-border;
+  border-radius: 3px;
+  margin: 0 4px;
+}
+
+.repo-header-list {
+  list-style: none;
+  float: right;
+}
+
+.repo-header-list-item {
+  display: inline-block;
+  margin: 8px 3px;
+}
+
+.repo-header-list-item-link {
+  color: $github-blue;
+  text-decoration: none;
+  font-size: .875rem;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.repo-link-active {
+  color: black;
+  font-weight: bold;
+}
+
+.new-repo-button {
+  float: right;
+  margin-left: 12px;
+  padding: 8px 12px;
+  background-image: linear-gradient(rgba(157, 212, 117, 1), rgba(112, 162, 74, 1));
+  color: white;
+  font-size: .8125rem;
+  border: 1px solid rgba(112, 162, 74, 1);
+  border-radius: 3px;
+
+  &:hover {
+    background-image: linear-gradient(rgba(145, 206, 99, 1), rgba(105, 152, 70, 1));  
+  }
+}
+
+
+
+.repo-list {
+  list-style: none;
 }
 
 .repo-list-name {
   display: inline-block;
+  margin: 0 0 8px 0;
+}
+
+.repo-list-name-link {
+  text-decoration: none;
+  color: $github-blue;
+  font-size: 1.25rem;
+
+  &:hover {
+    text-decoration: underline;
+
+  }
+
+}
+
+.repo-list-item {
+  border-bottom: 1px solid $list-item-border-color;
+  padding: 30px 0;
 }
 
 .repo-stats {
   float: right;
+  font-size: .75rem;
+  color: $repo-subtext;
+  font-weight: bold;
+  position: relative;
+}
+
+.stats-icon {
+  margin-left: 8px;
+}
+
+.stats-count {
+  margin-left: 3px;
+}
+
+.stargazers {
+  position: relative;
+}
+
+.stargazers {
+  &:hover .stargazers-description {
+    display: block;
+  }
+
+  &:hover .stargazers-triangle {
+    display: block;
+  }
+}
+
+.stargazers-description {
+  position: absolute;
+  white-space: nowrap;
+  background: $header-link-color;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-size: .7rem;
+  font-weight: normal;
+  top: 20px;
+  left: -15px;
+  display: none;
+}
+
+.stargazers-triangle {
+  position: absolute;
+  @include triangle(12px, $header-link-color, up);
+  left: 15px;
+  display: none;
+}
+
+.forks {
+  position: relative;
+}
+
+.forks {
+  &:hover .forks-description {
+    display: block;
+  }
+
+  &:hover .forks-triangle {
+    display: block;
+  }
+}
+
+.forks-description {
+  position: absolute;
+  white-space: nowrap;
+  background: $header-link-color;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 3px;
+  font-size: .7rem;
+  font-weight: normal;
+  top: 20px;
+  left: -7px;
+  display: none;
+}
+
+.forks-triangle {
+  position: absolute;
+  @include triangle(12px, $header-link-color, up);
+  left: 10px;
+  display: none;
+}
+
+.repo-update {
+  color: $repo-subtext;
+  font-size: .8125rem;
+}
+
+
+/*************************
+FOOTER
+*************************/
+
+footer {
+  width: 1005px;
+  margin: 0 auto;
+  padding: 40px 0;
+  @include clearfix;
+  font-size: .75rem;
+  text-align: center;
+  position: relative;
+}
+
+.footer-list-item {
+  display: inline-block;
+  padding: 0 5px;
+}
+
+.left-footer-list {
+  display: inline-block;
+  list-style: none;
+}
+
+.left-footer {
+  float: left;
+
+}
+
+.right-footer-list {
+  display: inline-block;
+  list-style: none;
+}
+
+.right-footer {
+  float: right;
+
+}
+
+.footer-link {
+  color: $github-blue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.github-copyright {
+  color: $repo-subtext;
+}
+
+.footer-logo {
+  position: absolute;
+  left: 50%;
+  top: 34px;
+  width: 24px;
+  height: 24px;
+  background-image: url(../img/footer-logo.png);
+
+  &:hover {
+    background-image: url(../img/footer-logo-hover.png);
+  }
 }
