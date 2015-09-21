@@ -1,25 +1,21 @@
 var repos = {
               method: "GET",
-              url: "https://api.github.com/users/a-emery/repos",
-              headers: { "Authorization": "token b11532b5682f65d7d49e82586d8a1a8c1821f952" }
+              url: "https://api.github.com/users/a-emery/repos"
             };
 
 var user = {
               method: "GET",
-              url: "https://api.github.com/user",
-              headers: { "Authorization": "token b11532b5682f65d7d49e82586d8a1a8c1821f952" }
+              url: "https://api.github.com/users/a-emery\?cliend_id\=a0203eaedf2872c91f33\&client_secret\=80fe6ee8cc80ed8eeb964fcfabab81436a61bc58",
             };
 
 var starred = {
               method: "GET",
-              url: "https://api.github.com/user/starred",
-              headers: { "Authorization": "token b11532b5682f65d7d49e82586d8a1a8c1821f952" }
+              url: "https://api.github.com/users/a-emery/starred",
             };
 
 var organs = {
               method: "GET",
-              url: "https://api.github.com/user/orgs",
-              headers: { "Authorization": "token b11532b5682f65d7d49e82586d8a1a8c1821f952" }
+              url: "https://api.github.com/users/a-emery/orgs",
             };
 
 /*****************
