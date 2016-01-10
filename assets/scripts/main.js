@@ -22,8 +22,8 @@ var organs = {
 Repo Pulls
 *****************/
 
-$.ajax(repos).then(function(datShit){
-  console.log(datShit);
+$.ajax(repos).then(function(data){
+  console.log(data);
 });
 
 
@@ -31,15 +31,15 @@ $.ajax(repos).then(function(datShit){
 User Pulls
 *****************/
 
-$.ajax(user).then(function(datShit){
-  console.log(datShit);
-  $(".js_avatar_img").attr("src", datShit.avatar_url);
-  $(".js_user_full_name").text(datShit.name);
-  $(".js_username").text(datShit.login);
-  $(".js_sidebar_email").text(datShit.email);
-  $(".js_followers_number").text(datShit.followers);
-  $(".js_following_number").text(datShit.following);
-  $(".js_joined_date").text(moment(datShit.created_at).format("MMM DD, YYYY"));
+$.ajax(user).then(function(data){
+  console.log(data);
+  $(".js_avatar_img").attr("src", data.avatar_url);
+  $(".js_user_full_name").text(data.name);
+  $(".js_username").text(data.login);
+  $(".js_sidebar_email").text(data.email);
+  $(".js_followers_number").text(data.followers);
+  $(".js_following_number").text(data.following);
+  $(".js_joined_date").text(moment(data.created_at).format("MMM DD, YYYY"));
 });
 
 
@@ -47,9 +47,9 @@ $.ajax(user).then(function(datShit){
 Starred Pulls
 *****************/
 
-$.ajax(starred).then(function(datShit){
-  console.log(datShit);
-  $(".js_starred_number").text(datShit.length);
+$.ajax(starred).then(function(data){
+  console.log(data);
+  $(".js_starred_number").text(data.length);
 });
 
 
@@ -69,8 +69,8 @@ Handlebars.registerHelper('updatedAt', function(data) {
   return moment(data).startOf('hour').fromNow();
 });
 
-$.ajax(organs).then(function(datShit){
-  datShit.forEach(displayOrganizationImg);
+$.ajax(organs).then(function(data){
+  data.forEach(displayOrganizationImg);
 });
 
 function displayOrganizationImg(data){
@@ -84,8 +84,8 @@ function displayOrganizationImg(data){
 }
 
 
-$.ajax(repos).then(function(datShit){
-  datShit.forEach(displayRepo);
+$.ajax(repos).then(function(data){
+  data.forEach(displayRepo);
 });
 
 
